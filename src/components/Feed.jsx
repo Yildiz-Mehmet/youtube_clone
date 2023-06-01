@@ -3,7 +3,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import { Sidebar, Videos } from "../components";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 const Feed = () => {
-  const [selectedCategory, setSelectedCategory] = useState("New");
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`);
@@ -42,7 +42,7 @@ const Feed = () => {
             color: "white",
           }}
         >
-          New
+          {selectedCategory}
           <span style={{ color: "#F31503" }}>videos</span>
         </Typography>
         <Videos videos={[]} />
