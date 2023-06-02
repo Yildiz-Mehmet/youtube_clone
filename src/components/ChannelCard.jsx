@@ -46,10 +46,11 @@ const ChannelCard = ({ channelDetail }) => (
           />
         </Typography>
         {channelDetail?.statistics?.subscriberCount && (
-          <Typography>
+          <Typography sx={{ fontSize: "15px", fontWeight: 500, color: "gray" }}>
             {parseInt(
               channelDetail?.statistics?.subscriberCount
-            ).toLocaleString()}
+            ).toLocaleString("en-US")}
+            Subscribers
           </Typography>
         )}
       </CardContent>
